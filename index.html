@@ -3,36 +3,336 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+
+    <title>Portfolio | Your Name</title>
+    <meta name="description" content="Personal portfolio of a fourth-year student showcasing selected projects, internship experience, and creative work.">
+
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <section>
-        <h1>header</h1>
-    </section>
-    <section>
-        <h1>main picture</h1>
-        <p>With your description</p>
-    </section>
-    <section>
-        <h1>carousel badges</h1>
-    </section>
-    <section>
-        <h1>project lists with screenshots</h1>
-        <p>categorized by topic</p>
-    </section>
-    <section>
-        <h1>Free Resources/ Personal notes</h1>
-    </section>
-    <section>
-        <h1>Download CV with email listed</h1>
-        <p>so that not everyone would have my own cv
-            without a record.
-        </p>
-    </section>
-    <section>
-        <h1>footer with linkedin link, github link</h1>
-    </section>
+    <!-- =========================
+         HEADER
+         ========================= -->
+    <header class="site-header">
+        <a class="brand" href="#top" aria-label="Back to home">alyzza ocoma</a>
+
+        <nav class="nav" aria-label="Main navigation">
+            <a href="#about">about</a>
+            <a href="#experience">experience</a>
+            <a href="#projects">projects</a>
+            <a href="#art">art</a>
+            <a class="cv-nav" href="assets/cv/Alyzza Ocoma_Resume.pdf" download aria-label="Download CV">
+                <span class="cv-icon" aria-hidden="true">↓</span>
+                <span>cv</span>
+            </a>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main id="top">
+
+        <!-- =========================
+             HERO
+             ========================= -->
+        <section class="hero section-shell">
+            <div class="hero-copy">
+                <p class="eyebrow">hello, i'm</p>
+
+                <!-- Replace with your real name -->
+                <h1>Aly<span>.</span></h1>
+
+                <p class="hero-role">
+                    fourth-year student · technology · creativity
+                </p>
+
+                <p class="hero-description">
+                    I am a student interested in technology, systems, cybersecurity,
+                    and creative problem-solving. This website is a collection of
+                    selected projects, experiences, and things I have learned along the way.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="outline-button" href="#projects">view my work</a>
+                    <a class="outline-button" href="#about">more about me</a>
+                </div>
+            </div>
+
+            <!-- Interactive profile -->
+            <div class="profile-wrap">
+                <canvas
+                    id="profileCanvas"
+                    class="profile-canvas"
+                    aria-label="Interactive pixel portrait"
+                ></canvas>
+
+                <div class="profile-caption">
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             ABOUT
+             ========================= -->
+        <section id="about" class="section section-shell">
+            <div class="section-label">
+                <span>/</span>
+                <h2>about</h2>
+            </div>
+
+            <div class="about-grid">
+                <p class="large-text">
+                    A student documenting the transition from university projects
+                    into professional work.
+                </p>
+
+                <div class="body-copy">
+                    <p>
+                        I am a fourth-year student building a foundation in technology,
+                        information systems, and practical problem-solving. I enjoy
+                        learning by creating, testing, documenting, and improving things.
+                    </p>
+                    <p>
+                        My portfolio brings together selected academic projects,
+                        internship experience, technical exercises, and a few things
+                        I create simply because I enjoy making them.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+             EXPERIENCE
+             ========================= -->
+        <section id="experience" class="section section-shell">
+            <div class="section-label">
+                <span>/</span>
+                <h2>experience</h2>
+            </div>
+
+            <article class="experience-row">
+                <div class="experience-meta">
+                    <span>June - Sept 2026</span>
+                    <span>internship</span>
+                </div>
+
+                <div>
+                    <h3>Nippon Paint (Coatings) Philippines, Inc.</h3>
+                    <p class="role-title">Intern / OJT</p>
+
+                    <p class="body-copy">
+                        IT Technical Support Intern under the Management Information System (MIS) Department, supporting the company's day-to-day IT operations and employee technical needs.
+                    </p>
+
+                    <ul class="simple-list">
+                        <li>Troubleshot laptops, computers, and printers</li>
+                        <li>Prepared, configured, and deployed company devices</li>
+                        <li>Maintained IT asset records and documentation</li>
+                        <li>Assisted with software updates and routine IT operations</li>
+                        <li>Provided technical support to employees</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- =========================
+             PROJECTS CAROUSEL
+             ========================= -->
+        <section id="projects" class="section section-shell">
+    <div class="section-label">
+        <span>/</span>
+        <h2>projects</h2>
+    </div>
+
+    <div class="projects-carousel">
+        <button class="project-arrow projects-prev" type="button"
+                aria-label="Previous project">←</button>
+
+        <div class="projects-track" tabindex="0">
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/capstone.jpg" alt="Screenshot of the Serve+ capstone project">
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>01</span>
+                        <span>CAPSTONE PROJECT</span>
+                    </div>
+                    <h3>SERVE+</h3>
+                    <p>A web-based information system designed to centralize service-learning activities, community engagement, project documentation, and student participation through gamified features and digital credentials.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>JavaScript</span>
+                        <span>Firebase</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/active-directory-lab.png" alt="Screenshot of the Active Directory lab">
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>02</span>
+                        <span>SYSTEMS</span>
+                    </div>
+                    <h3>Active Directory Lab</h3>
+                    <p>A hands-on lab project focused on setting up and managing a Windows Server environment, including Active Directory configuration, user and computer management, and basic network administration.</p>
+                    <div class="project-tags">
+                        <span>Windows Server</span>
+                        <span>Active Directory</span>
+                        <span>Oracle VirtualBox</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/tic-tac-toe.jpg" alt="Screenshot of the tic-tac-toe game project">
+                </div>
+                <div class="project-info">
+                    <div class="project-meta">
+                        <span>03</span>
+                        <span>XAMARIN GAME</span>
+                    </div>
+                    <h3>Tic Tac Toe</h3>
+                    <p>A simple implementation of the classic Tic Tac Toe game using Xamarin.</p>
+                    <div class="project-tags">
+                        <span>C#</span>
+                        <span>PHP</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <button class="project-arrow projects-next" type="button"
+                aria-label="Next project">→</button>
+    </div>
+</section>
+
+        <!-- =========================
+             NOTES / RESOURCES
+             Hidden for now — kept here so it can be restored later.
+             ========================= -->
+        <!--
+        <section id="resources" class="section section-shell">
+            <div class="section-label">
+                <span>04</span>
+                <h2>notes & resources</h2>
+            </div>
+
+            <p class="section-intro">
+                A place for notes, guides, documentation, and useful resources that
+                I may want to share as the portfolio grows.
+            </p>
+
+            <div class="resource-list">
+                <a href="#" class="resource-row" data-placeholder-link>
+                    <span>01</span>
+                    <strong>Learning Notes</strong>
+                    <span>short technical notes ↗</span>
+                </a>
+
+                <a href="#" class="resource-row" data-placeholder-link>
+                    <span>02</span>
+                    <strong>Project Documentation</strong>
+                    <span>guides & references ↗</span>
+                </a>
+
+                <a href="#" class="resource-row" data-placeholder-link>
+                    <span>03</span>
+                    <strong>Useful Resources</strong>
+                    <span>things worth bookmarking ↗</span>
+                </a>
+            </div>
+        </section>
+        -->
+
+        <!-- =========================
+             ART — MASONRY / PINTEREST STYLE
+             ========================= -->
+        <section id="art" class="section section-shell">
+            <div class="section-label">
+                <span>/</span>
+                <h2>art</h2>
+            </div>
+
+            <div class="art-heading">
+                <p>
+                    A quiet collection of drawings and creative work outside of my
+                    technical projects.
+                </p>
+            </div>
+
+            <div class="art-masonry">
+                <figure>
+                    <img src="assets/art/art-01.jpg" alt="Artwork 1">
+                </figure>
+
+                <figure>
+                    <img src="assets/art/art-02.jpg" alt="Artwork 2">
+                </figure>
+
+                <figure>
+                    <img src="assets/art/art-03.jpg" alt="Artwork 3">
+                </figure>
+
+                <figure>
+                    <img src="assets/art/art-04.jpg" alt="Artwork 4">
+                </figure>
+
+                <figure>
+                    <img src="assets/art/art-05.jpg" alt="Artwork 5">
+                </figure>
+
+                <figure>
+                    <img src="assets/art/art-06.gif" alt="Artwork 6">
+                </figure>
+            </div>
+        </section>
+
+        <!-- =========================
+             CONTACT + CV DOWNLOAD
+             ========================= -->
+        <section class="contact section-shell">
+            <p class="eyebrow">let's connect</p>
+
+            <h2>Thanks for stopping by.</h2>
+
+            <p>
+                Find more of my work through the links below.
+            </p>
+
+            <div class="cv-download-inline">
+                <a
+                    class="outline-button"
+                    href="assets/cv/your-name-cv.pdf"
+                    download
+                >
+                    <span class="download-icon" aria-hidden="true">↓</span>
+                    download CV
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/alyzzaocoma/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+                <a href="https://github.com/alyzzaocoma" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a href="mailto:alyzza.ocoma@gmail.com">Email ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" style="display: flex; justify-content: center; align-items: center;">
+        <span>© <span id="year"></span> Alyzza Ocoma</span>
+        <!-- <span>built with curiosity.</span> -->
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
