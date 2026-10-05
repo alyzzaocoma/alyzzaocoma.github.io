@@ -123,7 +123,7 @@ h3,
 .nav a::after {
     content: "";
     position: absolute;
-    bottom: -5px;
+    bottom: 1px;
     left: 14px;
     width: 0;
     height: 1px;
@@ -133,6 +133,7 @@ h3,
 
 .nav a:hover::after {
     width: calc(100% - 14px);
+
 }
 
 .nav .cv-nav {

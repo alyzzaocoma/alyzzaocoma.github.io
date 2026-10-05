@@ -1,12 +1,6 @@
-// =========================================================
-// PORTFOLIO INTERACTIONS
-// =========================================================
-
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ---------------------------------------------------------
-// Mobile navigation
-// ---------------------------------------------------------
+// for mobile navigation
 
 const menuToggle = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".nav");
@@ -23,19 +17,13 @@ document.querySelectorAll(".nav a").forEach(link => {
     });
 });
 
-// ---------------------------------------------------------
-// Interactive profile image
-// ---------------------------------------------------------
-// Uses the original halftone image, divided into tiles.
-// Cursor/finger movement pushes the tiles away with a little
-// swirl, inertia, and spring-back.
-// ---------------------------------------------------------
 
+// Interactive profile image
 const canvas = document.getElementById("profileCanvas");
 const ctx = canvas.getContext("2d");
 
 const profileImage = new Image();
-profileImage.src = "assets/profile/profile-pixels.png";
+profileImage.src = "assets/profile/profile-pixels1.png";
 
 let canvasWidth = 0;
 let canvasHeight = 0;
@@ -272,9 +260,8 @@ profileImage.addEventListener("load", () => {
     requestAnimationFrame(animate);
 });
 
-// ---------------------------------------------------------
-// Project carousel
-// ---------------------------------------------------------
+
+// projects carousel animation
 
 const carousel = document.querySelector("[data-carousel]");
 const track = carousel?.querySelector(".project-track");
@@ -330,24 +317,8 @@ if (carousel && track) {
     updateCarouselUI();
 }
 
-// ---------------------------------------------------------
-// Placeholder project/resource links
-// ---------------------------------------------------------
 
-document.querySelectorAll("[data-placeholder-link]").forEach(link => {
-    link.addEventListener("click", event => {
-        event.preventDefault();
-
-        alert(
-            "Replace this placeholder link with your actual project or resource URL."
-        );
-    });
-});
-
-
-// ---------------------------------------------------------
-// PROJECT CAROUSEL — HORIZONTAL
-// ---------------------------------------------------------
+// project horizontal scroll (left-right)
 
 const projectTrack = document.querySelector(".projects-track");
 const projectCards = projectTrack
