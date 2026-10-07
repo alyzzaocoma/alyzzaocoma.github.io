@@ -42,7 +42,7 @@
                 <h1>Aly<span>.</span></h1>
 
                 <p class="hero-role">
-                    fourth-year student · technology · creativity
+                    graduating student · technology · creativity
                 </p>
 
                 <p class="hero-description">
@@ -81,19 +81,28 @@
             <div class="about-grid">
                 <!--<p class="large-text">
                     IT
-                </p>--!>
+                </p>-->
 
-                    <div style="max-width: 61.8vw; margin-left: 10%; margin-right: auto; text-align: left;">
+                    <div class="about-text" style="margin-left: 5%; margin-right: auto; text-align: left;display: flex; flex-direction: column; justify-content: center;">
       
                       <p>I am a fourth-year student specializing in cybersecurity. Having recently completed my IT Technical Support internship at Nippon Paint, which gave me great hands-on experience practicing real, everyday IT troubleshooting. Right now, I’m really focused on breaking into the networking side of things, and I’m busy learning as much as I can about network security.</p>
-                    
-                      <p style="margin-top: 24px; margin-bottom: 8px;">Certifications so far:</p>
-                      <ul style="padding-left: 20px;">
-                        <li>CompTIA Tech+</li>
-                        <li>Cisco Network Support & Security</li>
-                      </ul>
-
-                </div>
+                    </div>
+                    <div class="certification">
+                        <p style="margin-bottom: 15px;">Certifications to Date:</p>
+                      
+                      <div style="display:flex; flex-direction:row; gap: 35px; margin-top: 16px;">
+                        <div class="certificate-card">
+                            <img src="assets/certificates/comptia-tech-plus.png" alt="CompTIA Tech+ Certificate">
+                            <p>CompTIA Tech+</p>
+                            <span>CompTIA</span>
+                        </div>
+                        <div class="certificate-card">
+                            <img src="assets/certificates/cisco-network-support-security.png" alt="Cisco Network Support & Security Certificate">
+                            <p>Network Support & Security</p>
+                            <span>Cisco</span>
+                        </div>
+                      </div>
+                    </div>
 
             </div>
         </section>
@@ -182,19 +191,27 @@
 
             <article class="project-card">
                 <div class="project-image">
-                    <img src="assets/projects/tic-tac-toe.jpg" alt="Screenshot of the tic-tac-toe game project">
+                    <img src="assets/projects/esc-project.png" alt="Screenshot of the tic-tac-toe game project">
                 </div>
                 <div class="project-info">
                     <div class="project-meta">
                         <span>03</span>
-                        <span>XAMARIN GAME</span>
+                        <span>CRYPTOGRAPHY</span>
                     </div>
-                    <h3>Tic Tac Toe</h3>
-                    <p>A simple implementation of the classic Tic Tac Toe game using Xamarin.</p>
+                    <h3>ESC: Enhanced-Keyed Shiftmerge Cipher</h3>
+                    <p>Our group developed a symmetric encryption algorithm we did when we were third year and now improving it by exploring a combination of
+key derivation, keyed substitution, transposition, metadata
+protection, and ciphertext noise injection.</p>
                     <div class="project-tags">
-                        <span>C#</span>
-                        <span>PHP</span>
+                        <span>Cybersecurity</span>
+                        <span>Cryptography</span>
+                        <span>PBKDF2</span>
+                        <span>SHA-256</span>
+                        <span>Symmetric Encryption</span>
                     </div>
+                    <button class="project-link" type="button" data-project-modal="esc-project">
+                        view project →
+                    </button>
                 </div>
             </article>
         </div>
@@ -203,6 +220,63 @@
                 aria-label="Next project">→</button>
     </div>
 </section>
+
+        <div class="project-modal" id="esc-project" aria-hidden="true">
+            <div class="project-modal-backdrop" data-project-modal-close></div>
+            <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="esc-project-title">
+                <div class="project-modal-header">
+                    <span>cryptography · group project</span>
+                    <!--<p class="eyebrow">cryptography · group project</p>-->
+                    <h2 id="esc-project-title">ESC: Enhanced-Keyed Shiftmerge Cipher</h2>
+                    <button class="project-modal-close" type="button" aria-label="Close project details" data-project-modal-close>×</button>
+                </div>
+                
+                <div class="project-modal-content">
+                            <span class="project-modal-label">overview</span>
+                            <p>ESC (Enhanced-Keyed Shiftmerge Cipher) is a cryptographic project
+developed as an enhancement of the original Shiftmerge concept.
+The project explores how classical substitution and transposition
+techniques can be combined with modern cryptographic mechanisms
+to create a more structured and key-dependent encryption process.</p>
+                    <div class="project-modal-section">
+
+                        <div>
+                            <span class="project-modal-label">my contribution</span>
+                            <p>Contributed to the development, testing, and documentation of the encryption algorithm as part of a collaborative research project.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-modal-section">
+                        <span class="project-modal-label">key concepts</span>
+                        <ul style="padding-left: 20px;">
+                            <li>PBKDF2-HMAC-SHA256 key derivation</li>
+                            <li>128-bit symmetric key</li>
+                            <li>Keyed substitution</li>
+                            <li>Enhanced Shiftmerge transposition</li>
+                            <li>Metadata encryption</li>
+                            <li>ciphertext noise injection</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-modal-section">
+                        <span class="project-modal-label">project outcome</span>
+                        <p>
+                            The algorithm was evaluated through entropy analysis and
+brute-force resistance testing to examine the randomness and
+security characteristics of its encryption stages.
+                        </p>
+                    </div>
+
+                    
+                    <p class="project-modal-note">
+                        <span class="project-modal-label">note</span>
+                        ESC was developed as an academic and research project to explore
+cryptographic concepts and is not intended to replace standardized
+cryptographic algorithms.
+                    </p>
+                </div>
+            </div>
+        </div>
 
         <!-- notes/ resources/ documentation
              (Hidden for now — kept here so it can be restored later.) -->
@@ -285,9 +359,8 @@
 
         <!-- cv download button -->
         <section class="contact section-shell">
-            <p class="eyebrow">let's connect</p>
-
-            <h2>Thanks for stopping by.</h2>
+            <!--<p class="eyebrow">let's connect</p>-->
+            <h3>let's connect!</h3>
 
             <p>
                 Find more of my work through the links below.

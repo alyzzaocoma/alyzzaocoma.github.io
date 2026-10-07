@@ -390,3 +390,59 @@ window.addEventListener(
 );
 
 updateProjectButtons();
+// project modal
+
+const projectModalButtons = document.querySelectorAll("[data-project-modal]");
+const projectModals = document.querySelectorAll(".project-modal");
+const projectModalCloseButtons = document.querySelectorAll("[data-project-modal-close]");
+
+function openProjectModal(modal) {
+    if (!modal) return;
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+}
+
+function closeProjectModal(modal) {
+    if (!modal) return;
+
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+}
+
+projectModalButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const modalId = button.dataset.projectModal;
+        const modal = document.getElementById(modalId);
+
+        openProjectModal(modal);
+    });
+});
+
+projectModalCloseButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const modal = button.closest(".project-modal");
+
+        closeProjectModal(modal);
+    });
+});
+
+projectModals.forEach(modal => {
+    modal.addEventListener("click", event => {
+        if (event.target === modal || event.target.hasAttribute("data-project-modal-close")) {
+            closeProjectModal(modal);
+        }
+    });
+});
+
+document.addEventListener("keydown", event => {
+    if (event.key !== "Escape") return;
+
+    const openModal = document.querySelector(".project-modal.open");
+
+    if (openModal) {
+        closeProjectModal(openModal);
+    }
+});

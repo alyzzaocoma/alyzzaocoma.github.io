@@ -263,7 +263,7 @@ h3,
     align-items: center;
     gap: 55px;
 
-    padding-top: 55px;
+    padding-top: 15px;
     padding-bottom: 80px;
 }
 
@@ -362,11 +362,14 @@ h3,
    --------------------------------------------------------- */
 
 .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 75px;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    align-items: flex-start;
 }
-
+.about-text{
+    max-width: 45vw;
+}
 .large-text {
     font-family: "Cooper BT", "Cooper Black", Georgia, serif;
     font-size: clamp(1.45rem, 3vw, 2.1rem);
@@ -395,6 +398,36 @@ h3,
 
 .simple-list li {
     padding: 3px 0;
+}
+.certificate-card{
+    text-align: center;
+}
+.certificate-card img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 24px;
+    display: block;
+    border: 1px solid var(--border);
+    transition: transform .25s ease;
+}
+.certificate-card:hover img {
+    transform: translateY(-4px);
+}
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .about-text{
+        width: 100%;
+        max-width:80vw;
+        margin: right 0;
+    }
+    .certification {
+        width: 100%;
+        margin-left: 5%;
+    }
 }
 
 /* ---------------------------------------------------------
@@ -641,15 +674,16 @@ h3,
 .project-link {
     display: inline-block;
     margin-top: 19px;
-    padding-bottom: 3px;
-
-    border-bottom: 1px solid var(--black);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--black);
 
     font-size: .66rem;
 }
 
 .project-link:hover {
-    opacity: .55;
+    background: var(--black);
+    color: var(--white);
 }
 
 .carousel-progress {
@@ -757,8 +791,8 @@ h3,
    --------------------------------------------------------- */
 
 .contact {
-    padding-top: 165px;
-    padding-bottom: 110px;
+    padding-top: 20px;
+    padding-bottom: 55px;
     text-align: center;
 }
 
@@ -1275,5 +1309,177 @@ h3,
 
     .project-arrow.projects-next {
         right: 6px !important;
+    }
+}
+
+.project-image {
+    aspect-ratio: 16 / 9;
+    max-height: calc(100vh - 360px);
+}
+
+.project-image img {
+    object-fit: contain;
+}
+
+.project-link {
+    appearance: none;
+    background: transparent;
+    color: var(--black);
+    font-family: "Avant Garde Gothic", "Century Gothic", "Avenir Next", Avenir, Arial, sans-serif;
+    cursor: pointer;
+}
+
+.project-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: grid;
+    place-items: center;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 180ms ease, visibility 180ms ease;
+}
+
+.project-modal.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.project-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+.project-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(820px, 100%);
+    max-height: min(82vh, 760px);
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    border: 1px solid var(--black);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .16);
+    transform: translateY(12px);
+    transition: transform 180ms ease;
+}
+
+.project-modal.open .project-modal-dialog {
+    transform: translateY(0);
+}
+
+.project-modal-header {
+    position: relative;
+    flex-shrink: 0;
+    border-bottom: 0.5px solid var(--black);
+    padding: 42px 42px 24px;
+    background: var(--white);
+}
+
+.project-modal-header h2 {
+    margin: 8px 50px 0 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1;
+}
+
+.project-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--black);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--black);
+    font-family: Arial, sans-serif;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.project-modal-close:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.project-modal-content {
+    max-width: 700px;
+    padding: 25px 42px 42px;
+    overflow-y: auto;
+}
+
+.project-modal-content h2 {
+    max-width: 650px;
+    margin: 8px 0 24px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1;
+}
+
+.project-modal-content > p,
+.project-modal-section p,
+.project-modal-section ul,
+.project-modal-section li,
+.project-modal-grid p {
+    color: var(--gray);
+    font-size: .84rem;
+}
+
+.project-modal-grid {
+    display: grid;
+    grid-template-columns: .7fr 1.3fr;
+    gap: 30px;
+    margin-top: 32px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.project-modal-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #777;
+    font-family: "Avant Garde Gothic", "Century Gothic", "Avenir Next", Avenir, Arial, sans-serif;
+    font-size: .61rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.project-modal-section {
+    margin-top: 27px;
+}
+
+.project-modal-note {
+    margin-top: 30px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    font-size: .72rem !important;
+}
+
+body.project-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 700px) {
+    .project-image {
+        max-height: calc(100vh - 330px);
+    }
+
+    .project-modal {
+        padding: 15px;
+    }
+
+    .project-modal-dialog {
+        max-height: 88vh;
+        padding: 28px 22px 25px;
+    }
+
+    .project-modal-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
 }
